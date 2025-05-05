@@ -29,8 +29,8 @@ resrejection = runabc(setup, targetdata, parallel=true);
 println("\t Check ABC rejection algorithm correctly infers parameters")
 
 # test that mean value of posterior is within 10% of true value
-@test isapprox(mean(resrejection.parameters, dims = 1)[1], p1, rtol = 0.05)
-@test isapprox(mean(resrejection.parameters, dims = 1)[2], p2, rtol = 0.05)
+@test isapprox(mean(resrejection.parameters, dims = 1)[1], p1, rtol = 0.1)
+@test isapprox(mean(resrejection.parameters, dims = 1)[2], p2, rtol = 0.1)
 
 println("\t Check no errors arising from plotting")
 plot(resrejection)
